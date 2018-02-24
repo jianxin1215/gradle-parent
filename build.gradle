@@ -18,12 +18,6 @@ subprojects {
         }
     }
 
-    jar {
-        manifest {
-            attributes 'Git-Version': gitVer()
-        }
-    }
-
     sourceCompatibility = 1.8
     targetCompatibility = 1.8
 
@@ -37,19 +31,5 @@ subprojects {
                 "org.apache.logging.log4j:log4j-core:${log4j2_ver}"
         )
         testCompile "junit:junit:${junit_ver}"
-    }
-}
-
-static def gitVer() {
-    // def cmd = 'git rev-parse HEAD'
-    def cmd = 'git log --pretty=format:%h -1 .'
-    def ver = cmd.execute().text.trim()
-
-    return ver
-}
-
-task gitVer {
-    doLast {
-        println(gitVer())
     }
 }

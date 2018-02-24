@@ -15,3 +15,10 @@ war {
         attributes 'Git-Version': gitVer()
     }
 }
+
+static def gitVer() {
+    def cmd = 'git rev-parse HEAD'
+    def ver = cmd.execute().text.trim()
+
+    return ver
+}
