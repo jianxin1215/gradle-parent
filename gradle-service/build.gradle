@@ -6,9 +6,3 @@ dependencies {
             project(':gradle-api')
     )
 }
-
-jar {
-    manifest {
-        attributes 'Git-Version': gitVer()
-    }
-}

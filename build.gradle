@@ -18,6 +18,12 @@ subprojects {
         }
     }
 
+    jar {
+        manifest {
+            attributes 'Git-Version': gitVer()
+        }
+    }
+
     sourceCompatibility = 1.8
     targetCompatibility = 1.8
 
