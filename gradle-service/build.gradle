@@ -1,0 +1,8 @@
+group 'com.king.gradle'
+version '1.0-SNAPSHOT'
+
+dependencies {
+    compile (
+            project(':gradle-api')
+    )
+}

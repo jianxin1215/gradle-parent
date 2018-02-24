@@ -1,0 +1,11 @@
+group 'com.king.gradle'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'war'
+
+dependencies {
+    compile(
+            "javax.servlet:javax.servlet-api:${servlet_ver}",
+            project(':gradle-service')
+    )
+}

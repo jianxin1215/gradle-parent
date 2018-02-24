@@ -1,0 +1,35 @@
+group 'com.king.gradle'
+version '1.0-SNAPSHOT'
+
+ext {
+    servlet_ver = '3.1.0'
+}
+
+subprojects {
+    apply plugin: 'java'
+
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+
+    repositories {
+        mavenLocal()
+        mavenCentral()
+    }
+
+    dependencies {
+        testCompile 'junit:junit:4.12'
+    }
+}
+
+static def gitVer() {
+    def cmd = 'git rev-parse HEAD'
+    def ver = cmd.execute().text.trim()
+
+    return ver
+}
+
+task gitVer {
+    doLast {
+        println(gitVer())
+    }
+}
