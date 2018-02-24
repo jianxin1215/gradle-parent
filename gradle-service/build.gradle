@@ -9,6 +9,6 @@ dependencies {
 
 jar {
     manifest {
-        attributes 'Git-Ver': gitVer()
+        attributes 'Git-Version': gitVer()
     }
 }

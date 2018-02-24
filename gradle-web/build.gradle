@@ -9,3 +9,9 @@ dependencies {
             project(':gradle-service')
     )
 }
+
+war {
+    manifest {
+        attributes 'Git-Version': gitVer()
+    }
+}
