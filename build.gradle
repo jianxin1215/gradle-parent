@@ -41,7 +41,8 @@ subprojects {
 }
 
 static def gitVer() {
-    def cmd = 'git rev-parse HEAD'
+    // def cmd = 'git rev-parse HEAD'
+    def cmd = 'git log --pretty=format:%h -1 .'
     def ver = cmd.execute().text.trim()
 
     return ver
